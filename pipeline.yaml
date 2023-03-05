@@ -17,3 +17,25 @@ spec:
       - image: alpine:3.15
         script: |
           echo "hello $(params.username)"
+  - name: task-2
+    params:
+    - name: username
+      value: $(params.username)
+    taskSpec:
+      params:
+      - name: username
+      steps:
+      - image: alpine:3.15
+        script: |
+          echo "hello $(params.username)"
+  - name: task-3
+    params:
+    - name: username
+      value: $(params.username)
+    taskSpec:
+      params:
+      - name: username
+      steps:
+      - image: alpine:3.15
+        script: |
+          echo "hello $(params.username)"
