@@ -46,7 +46,8 @@ spec:
       params:
       - name: url
         value: https://github.com/yuzp1996/catalog-test.git
-      - name: username
-        value: $(params.username)
       - name: pathInRepo
         value: task.yaml
+    params:
+    - name: username
+      value: $(params.username)
