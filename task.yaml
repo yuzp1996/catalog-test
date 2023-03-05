@@ -4,12 +4,10 @@ metadata:
   name: echo
 spec:
   description: >-
-    This Task is Golang task to build Go projects.
-    params:
-    - name: username
-      value: $(params.username)  
+    This Task is used to echo name.
   params:
   - name: username
+    value: $(params.username)  
   steps:
   - image: alpine:3.15
     script: |
