@@ -5,6 +5,7 @@ metadata:
 spec:
   params:
   - name: username
+  - name: gitRevision
   tasks:
   - name: task-1
     params:
@@ -39,3 +40,14 @@ spec:
       - image: alpine:3.15
         script: |
           echo "hello $(params.username)"
+  - name: "go-build"
+    taskRef:
+      resolver: git
+      params:
+      - name: url
+        value: https://github.com/tektoncd/catalog.git
+      - name: revision
+        # value can use params declared at the pipeline level or a static value like main
+        value: $(params.gitRevision) 
+      - name: pathInRepo
+        value: task/golang-build/0.3/golang-build.yaml

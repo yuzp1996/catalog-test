@@ -15,3 +15,5 @@ spec:
   params:
   - name: username
     value: liza
+  - name: gitRevision
+    value: main
